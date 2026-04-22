@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>RSC TOOLS | Free Invoice Generator & PDF Maker</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Generate beautiful, professional invoices directly in your browser. Upload logos, add items, compute GST, and download as PDF completely free and private." />
+  <meta name="keywords" content="invoice generator, free invoice maker, pdf invoice, business tools, rsc tools" />
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- HTML2PDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Canonical link -->
+  <link rel="canonical" href="https://rsctools.in/invoice.html" />
+  
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "RSC TOOLS | Free Invoice Generator & PDF Maker",
+    "description": "Generate beautiful, professional invoices directly in your browser. Upload logos, add items, compute GST, and download as PDF completely free and private.",
+    "url": "https://rsctools.in/invoice.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script src="theme.js"></script>
+  <script src="notify.js"></script>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+  </button>
+
+
+  <!-- Animated background orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  
+
+  <div class="page-container">
+    <aside class="ad-sidebar ad-left">
+      <div class="ad-sticky">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4; margin-bottom: 8px;"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        Ad Space
+      </div>
+    </aside>
+
+    <div class="app-wrapper">
+    <!-- ── Navigation ── -->
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg> Dimension Checker</a>
+      <a href="whatsapp.html" class="nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg> WhatsApp Generator</a>
+      <a href="interest.html" class="nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Interest Calculator</a>
+      <a href="invoice.html" class="nav-link active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Invoice Generator</a>
+    </nav>
+
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="10" fill="url(#logoGrad)"/>
+            <path d="M10 8h12v16H10z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="13" y1="12" x2="19" y2="12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <line x1="13" y1="16" x2="19" y2="16" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <line x1="13" y1="20" x2="16" y2="20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4f46e5"/>
+                <stop offset="1" stop-color="#2563eb"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">RSC <span class="logo-highlight" style="background: linear-gradient(135deg, #6366f1, #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">TOOLS</span></span>
+      </div>
+      <p class="tagline">Smart Invoice Generator</p>
+    </header>
+
+    <!-- ── Main Content ── -->
+    <main class="main-content">
+
+      <div class="page-header" style="margin-bottom: 1.5rem; border-bottom: 2px solid var(--col-border); padding-bottom: 1rem;">
+        <h2 class="section-title" style="margin-bottom: 0.5rem; border: none; padding: 0;">Online Invoice Generator</h2>
+        <p style="font-size: 1.05rem; color: var(--col-primary-d); margin: 0; font-weight: 500;">Create & Download Professional Invoices instantly.</p>
+      </div>
+
+      <div class="privacy-note" style="margin-bottom: 2rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>100% Private: All generation happens locally in your browser. All business data and generated invoices will be deleted automatically after closing or refreshing the tab.</span>
+      </div>      
+
+      <div class="layout-twocol">
+        
+        <!-- Left: Form Controls -->
+        <div class="tool-column">
+          <div class="upload-section" style="padding: 2rem;">
+            <form id="invoiceForm">
+              
+              <h3 style="margin-bottom: 1rem; color: var(--col-primary-d); font-size: 1.1rem; font-weight: 700;">Business Details</h3>
+              <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                  <label for="bizName" class="form-label">Business Name</label>
+                  <input type="text" id="bizName" class="form-control" placeholder="e.g. Acme Corp" />
+                </div>
+                <div class="form-group" style="flex: 1; min-width: 0;">
+                  <label for="bizLogo" class="form-label">Logo (Optional, Max 2MB)</label>
+                  <input type="file" id="bizLogo" class="form-control" accept="image/png, image/jpeg" style="padding: 0.45rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group" style="flex: 2;">
+                  <label for="bizAddress" class="form-label">Business Address</label>
+                  <textarea id="bizAddress" class="form-control" placeholder="123 Industrial Park, City..." rows="1"></textarea>
+                </div>
+                <div class="form-group" style="flex: 1.2;">
+                  <label for="bizPhone" class="form-label">Biz Phone</label>
+                  <input type="text" id="bizPhone" class="form-control" placeholder="+91 9999999999" />
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                  <label for="clientName" class="form-label">Billed To (Client)</label>
+                  <input type="text" id="clientName" class="form-control" placeholder="e.g. John Doe" />
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label for="clientPhone" class="form-label">Client Phone</label>
+                  <input type="text" id="clientPhone" class="form-control" placeholder="+91 9876543210" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                  <label for="inputInvNum" class="form-label">Invoice #</label>
+                  <div style="display: flex; align-items: stretch;">
+                    <span style="background: #f8fafc; border: 1px solid var(--col-border); border-right: none; padding: 0.8rem 0.8rem; border-radius: var(--radius-sm) 0 0 var(--radius-sm); color: var(--col-muted); font-size: 0.95rem; display: flex; align-items: center;">INV-</span>
+                    <input type="number" id="inputInvNum" class="form-control" value="1" min="1" style="border-radius: 0 var(--radius-sm) var(--radius-sm) 0; width: 100%;" />
+                  </div>
+                </div>
+                <div class="form-group" style="flex: 1.1;">
+                  <label for="invoiceDate" class="form-label">Date</label>
+                  <input type="date" id="invoiceDate" class="form-control" />
+                </div>
+                <div class="form-group" style="flex: 0.7;">
+                  <label for="currencySym" class="form-label">Currency</label>
+                  <select id="currencySym" class="form-control" style="width: 100%; text-align: center; text-align-last: center; padding-left: 0.5rem; padding-right: 0.5rem;">
+                    <option value="₹">₹</option>
+                    <option value="$">$</option>
+                    <option value="€">€</option>
+                    <option value="£">£</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr style="border: 0; border-top: 1px solid var(--col-border); margin: 1.5rem 0;" />
+              
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="color: var(--col-primary-d); font-size: 1.1rem; font-weight: 700; margin: 0;">Items / Services</h3>
+                <button type="button" id="addItemBtn" class="btn-sec" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">+ Add Item</button>
+              </div>      
+              <div id="itemsContainer">
+                <!-- Dynamically populated rows go here -->
+              </div>
+
+              <hr style="border: 0; border-top: 1px solid var(--col-border); margin: 1.5rem 0;" />
+
+              <h3 style="margin-bottom: 1rem; color: var(--col-primary-d); font-size: 1.1rem; font-weight: 700;">Taxes</h3>
+              <div class="form-group">
+                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                  <input type="checkbox" id="applyGst" style="width: 18px; height: 18px;" />
+                  Apply GST (Total %)
+                </label>
+                <input type="number" id="gstRate" class="form-control" placeholder="18" disabled style="width: 150px; margin-top: 0.5rem;" />
+              </div>
+
+              <!-- Live Total Tracker -->
+              <div class="live-total-preview" style="background: rgba(16, 185, 129, 0.08); border: 1px dashed rgba(16, 185, 129, 0.4); padding: 1rem 1.2rem; border-radius: var(--radius-md); margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 600; color: var(--col-text); font-size: 1.05rem;">To Collect:</span>
+                <span id="liveTotalDisplay" style="font-size: 1.5rem; font-weight: 800; color: #10b981;">₹0.00</span>
+              </div>
+
+              <button type="button" class="btn-primary" id="generateInvoiceBtn" style="width: 100%; margin-top: 1.5rem; font-size: 1.1rem; padding: 1rem;">
+                Generate Invoice
+              </button>
+
+            </form>
+          </div>
+
+          <!-- Donation Sidebar Element -->
+          <div class="donation-card" style="margin-top: 2rem;">
+            <div class="donation-header">
+              <span class="donation-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </span>
+              <h3>Support RSC TOOLS</h3>
+            </div>
+            <p class="donation-tagline">All tools are provided completely free! Leave a tip as an appreciation!</p>
+            
+            <div class="amount-grid" id="donationGridInv">
+              <button class="amt-btn active" data-amt="20">₹20</button>
+              <button class="amt-btn" data-amt="50">₹50</button>
+              <button class="amt-btn" data-amt="100">₹100</button>
+              <button class="amt-btn" data-amt="500">₹500</button>
+              <button class="amt-btn" data-amt="1000">₹1000</button>
+              <input type="number" id="customAmtInv" class="custom-amt" placeholder="Custom" min="1" aria-label="Custom donation amount" />
+            </div>
+
+            <button type="button" class="btn-donate" id="donateBtnInv">
+              Donate <span id="donateDisplayAmtInv">₹20</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:6px;">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Generated Invoices List -->
+        <aside class="sidebar-column">
+          <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--col-text); margin-bottom: 1.5rem; border-bottom: 2px solid var(--col-border); padding-bottom: 0.5rem;">Generated Invoices</h2>
+          
+          <div id="generatedList" style="display: flex; flex-direction: column; gap: 1rem;">
+            <!-- Generated Invoice Cards will appear here -->
+            <div id="emptyListMsg" style="text-align: center; color: var(--col-muted); font-size: 0.95rem; margin-top: 3rem;">
+              Fill details and click "Generate Invoice" to create downloadable PDFs here.
+            </div>
+          </div>
+          
+          <!-- Hidden container to render PDF layouts into without showing them on screen -->
+          <div id="hiddenPdfRenderArea" style="position: absolute; top: -9999px; left: -9999px; opacity: 0; pointer-events: none; width: 800px;"></div>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61577324745129" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/princecherry_75/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://whatsapp.com/channel/0029VaDLoZqK0IBlvb8IkV43" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 <strong>RSC TOOLS</strong> · All processing happens in your browser · No data is ever stored</p>
+        </footer>
+    </div> <!-- End app-wrapper -->
+
+    <aside class="ad-sidebar ad-right">
+      <div class="ad-sticky">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4; margin-bottom: 8px;"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+        Ad Space
+      </div>
+    </aside>
+
+  </div> <!-- End page-container -->
+
+  <script src="invoice.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+</body>
+</html>
